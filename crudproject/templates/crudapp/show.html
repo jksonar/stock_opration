@@ -9,27 +9,27 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Order ID</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Price</th>
-        <th scope="col">Email ID</th>
-        <th scope="col">Address</th>
+        <th scope="col">ID</th>
+        <th scope="col">Stock Name</th>
+        <th scope="col">Sector</th>
+        <th scope="col">percent Holdings</th>
+        <th scope="col">Mutual Fund Name</th>
+        <th scope="col">Mutual fund type</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
     {% for i in obj %}
       <tr>
-        <td>{{i.oid}}</td>
+        <td>{{i.id}}</td>
+        <td>{{i.sname}}</td>
+        <td>{{i.sectors}}</td>
+        <td>{{i.holding}}</td>
         <td>{{i.fname}}</td>
-        <td>{{i.lname}}</td>
-        <td>{{i.price}}</td>
-        <td>{{i.mail}}</td>
-        <td>{{i.addr}}</td>
+        <td>{{i.ftype}}</td>
         <td>
-            <button class="btn btn-warning"><a href="{% url 'update_url' i.oid %}">Update</a></button>&nbsp;&nbsp;
-            <button class="btn btn-danger"><a href="{% url 'delete_url' i.oid %}">Delete</a></button>
+            <button class="btn btn-warning"><a href="{% url 'update_url' i.id %}">Update</a></button>&nbsp;&nbsp;
+            <button class="btn btn-danger"><a href="{% url 'delete_url' i.id %}">Delete</a></button>
         </td>
       </tr>
     {% endfor %}

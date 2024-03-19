@@ -1,13 +1,13 @@
 from django.db import models
 
 # Create your models here.
-class Orders(models.Model):
-    oid = models.IntegerField(primary_key=True)
-    fname = models.CharField(max_length=20)
-    lname = models.CharField(max_length=20)
-    price = models.FloatField()
-    mail = models.EmailField()
-    addr = models.CharField(max_length=50)
+class Stocks(models.Model):
+    id = models.IntegerField(primary_key=True)
+    sname = models.CharField(max_length=100)
+    sectors = models.CharField(max_length=100)
+    holding = models.FloatField()
+    fname = models.CharField(max_length=100)
+    ftype = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'{self.fname}'
+        return f'{self.sname}'

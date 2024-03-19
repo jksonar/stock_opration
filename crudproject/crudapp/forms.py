@@ -1,25 +1,25 @@
 from django import forms
-from .models import Orders
+from .models import Stocks
 
-class OrderForm(forms.ModelForm):
+class StockForm(forms.ModelForm):
     class Meta:
-        model = Orders
+        model = Stocks
         fields = '__all__'
 
         labels = {
-            'oid': 'Order ID',
-            'fname' : 'First Name',
-            'lname' : 'Last Name.' ,
-            'price' : 'Price' ,
-            'mail' : 'Email ID',
-            'addr' : 'Address' ,
+            'id': 'ID',
+            'sname' : 'Stocks Name.',
+            'sectors' : 'Sectors.' ,
+            'holding' : 'Holding' ,
+            'fname' : 'Mutual Fund-Name ',
+            'ftype' : 'Mutual Fund-Type' ,
         }
 
         widgets  ={
-            'oid' : forms.NumberInput(attrs={'placeholder': 'eg. 101'}),
-            'fname' : forms.TextInput(attrs={'placeholder': 'eg. Prosenjeet'}),
-            'lname' : forms.TextInput(attrs={'placeholder': 'eg. Shil'}),
-            'price' : forms.NumberInput(attrs={'placeholder': 'eg. 10000'}),
-            'mail' : forms.EmailInput(attrs={'placeholder': 'eg. abc@xyz.com'}),
-            'addr' : forms.Textarea(attrs={'placeholder': 'eg. IN'}),
+            'id' : forms.NumberInput(attrs={'placeholder': 'eg. 101'}),
+            'sname' : forms.TextInput(attrs={'placeholder': 'eg. TCS'}),
+            'sectors' : forms.TextInput(attrs={'placeholder': 'eg. energy'}),
+            'holding' : forms.NumberInput(attrs={'placeholder': 'eg. 10000'}),
+            'fname' : forms.TextInput(attrs={'placeholder': 'eg. Adia '}),
+            'ftype' : forms.TextInput(attrs={'placeholder': 'eg. small cab'}),
         }
