@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'crudproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'localhost',
-        'NAME': 'stock_analytics',
-        'OPTIONS': {
-            'service': 'my_service',
-        },
+        'NAME': 'stocks', 
+        'USER': 'stock_user',
+        'PASSWORD': 'S3cr3tP@55W04d2024',
+        'HOST': '127.0.0.1', 
+        'PORT': '5432',
     }
 }
 
