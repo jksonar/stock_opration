@@ -1,36 +1,36 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    <title>Show Page</title>
+    <title>Show Fund Page</title>
 {% endblock %}
 
 {% block content %}
-<center><h1>Show Stocks</h1></center>
+<center><h1>Show All Fund Name</h1></center>
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">ID</th>
+        {% comment %} <th scope="col">ID</th>
         <th scope="col">Stocks</th>
         <th scope="col">Sectors</th>
-        <th scope="col">% of holding</th>
-        <th scope="col">Mutual Fund Name</th>
-        <th scope="col">Mutual Fund Type</th>
-        <th scope="col">Actions</th>
+        <th scope="col">% of holding</th> 
+        <th scope="col">Mutual Fund Name</th> {% endcomment %}
+         <th scope="col">Mutual Fund Type</th>
+        {% comment %} <th scope="col">Actions</th> {% endcomment %}
       </tr>
     </thead>
     <tbody>
     {% for i in obj %}
       <tr>
-        <td>{{i.id}}</td>
+        {% comment %} <td>{{i.id}}</td>
         <td>{{i.sname}}</td>
         <td>{{i.sectors}}</td>
-        <td>{{i.holding}}</td>
-        <td>{{i.fname}}</td>
+        <td>{{i.holding}}</td> 
+        <td>{{i.fname}}</td> {% endcomment %}
         <td>{{i.ftype}}</td>
-        <td>
+        {% comment %} <td>
             <button class="btn btn-warning"><a href="{% url 'update_url' i.id %}">Update</a></button>&nbsp;&nbsp;
             <button class="btn btn-danger"><a href="{% url 'delete_url' i.id %}">Delete</a></button>
-        </td>
+        </td> {% endcomment %}
       </tr>
     {% endfor %}
     </tbody>
