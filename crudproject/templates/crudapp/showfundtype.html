@@ -17,7 +17,7 @@
     {% for i in obj %}
       <tr>
         <td>{{ forloop.counter }}</td>
-        <td>{{i.ftype}}</td>
+        <td><a href="{% url 'show_fund_type_stock_url' i.ftype %}">{{i.ftype}}</a></td>
       </tr>
     {% endfor %}
     </tbody>
