@@ -4,10 +4,9 @@ from .models import Stocks
 class StockForm(forms.ModelForm):
     class Meta:
         model = Stocks
-        fields = '__all__'
+        fields = ['sname', 'sectors', 'holding', 'fname', 'ftype']  # Exclude the 'id' field from the form
 
         labels = {
-            'id': 'ID',
             'sname' : 'Stocks Name.',
             'sectors' : 'Sectors.' ,
             'holding' : 'Holding' ,
@@ -16,10 +15,9 @@ class StockForm(forms.ModelForm):
         }
 
         widgets  ={
-            'id' : forms.NumberInput(attrs={'placeholder': 'eg. 101'}),
             'sname' : forms.TextInput(attrs={'placeholder': 'eg. TCS'}),
             'sectors' : forms.TextInput(attrs={'placeholder': 'eg. energy'}),
-            'holding' : forms.NumberInput(attrs={'placeholder': 'eg. 10000'}),
+            'holding' : forms.NumberInput(attrs={'placeholder': 'eg. 10.02'}),
             'fname' : forms.TextInput(attrs={'placeholder': 'eg. Adia '}),
             'ftype' : forms.TextInput(attrs={'placeholder': 'eg. small cab'}),
         }

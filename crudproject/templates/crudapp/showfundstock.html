@@ -21,7 +21,7 @@
     <tbody>
     {% for i in obj %}
       <tr>
-        <td>{{i.id}}</td>
+        <td>{{forloop.counter }}</td>
         <td>{{i.sname}}</td>
         <td>{{i.sectors}}</td>
         <td>{{i.holding}}</td>
