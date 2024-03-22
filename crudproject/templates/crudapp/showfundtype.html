@@ -9,28 +9,15 @@
 <table class="table">
     <thead>
       <tr>
-        {% comment %} <th scope="col">ID</th>
-        <th scope="col">Stocks</th>
-        <th scope="col">Sectors</th>
-        <th scope="col">% of holding</th> 
-        <th scope="col">Mutual Fund Name</th> {% endcomment %}
-         <th scope="col">Mutual Fund Type</th>
-        {% comment %} <th scope="col">Actions</th> {% endcomment %}
+        <th scope="col">ID</th>
+        <th scope="col">Mutual Fund Type</th>
       </tr>
     </thead>
     <tbody>
     {% for i in obj %}
       <tr>
-        {% comment %} <td>{{i.id}}</td>
-        <td>{{i.sname}}</td>
-        <td>{{i.sectors}}</td>
-        <td>{{i.holding}}</td> 
-        <td>{{i.fname}}</td> {% endcomment %}
+        <td>{{ forloop.counter }}</td>
         <td>{{i.ftype}}</td>
-        {% comment %} <td>
-            <button class="btn btn-warning"><a href="{% url 'update_url' i.id %}">Update</a></button>&nbsp;&nbsp;
-            <button class="btn btn-danger"><a href="{% url 'delete_url' i.id %}">Delete</a></button>
-        </td> {% endcomment %}
       </tr>
     {% endfor %}
     </tbody>

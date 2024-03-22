@@ -27,6 +27,13 @@ def fundStockView(request,s_fname):
     context = {'obj': obj}
     return render(request, template_name, context)
 
+# list type of fund having
+def fundStockTypeView(request,s_ftype):
+    obj = Stocks.objects.filter(ftype=s_ftype).order_by('ftype')
+    template_name = 'crudapp/showfundstock.html'
+    context = {'obj': obj}
+    return render(request, template_name, context)
+
 # list all destinct mutual fund name 
 def showFundView(request):
     obj = Stocks.objects.values('fname').distinct().order_by('fname')
